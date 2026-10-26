@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>9:16 風格標題樣本</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal-hi: #77b8ba; --teal: #306c6c; --teal-lo: #184848; --teal-deep: #0c3030;
+    --cream-hi: #fcf0e4; --cream: #f0e4d8; --cream-lo: #e4d8cc;
+    --coral-hi: #f0a884; --coral: #e46c48; --coral-lo: #c4502f;
+    --gold-hi: #fff1c4; --gold: #e8b964; --gold-lo: #9a6a22;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Noto Sans TC", "PingFang TC", sans-serif; background: #111; }
+  .card {
+    width: 1080px; height: 1920px; position: relative; overflow: hidden;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .tag, .foot { display: none !important; }
+  .title { position: relative; z-index: 1; }
+  .tag { position: absolute; top: 90px; left: 90px; font-size: 32px; letter-spacing: .12em; opacity: .85; }
+  .foot { position: absolute; bottom: 90px; font-size: 30px; letter-spacing: .18em; opacity: .8; }
+  .title {
+    margin: 0; font-weight: 900; text-align: center; line-height: 1.22;
+    font-size: 176px; color: transparent;
+    -webkit-background-clip: text; background-clip: text;
+  }
+  .title span { display: block; }
+  .clip { -webkit-background-clip: text; background-clip: text; }
+  .fill-cream { background: linear-gradient(180deg, var(--cream-hi), var(--cream) 60%, var(--cream-lo)); -webkit-background-clip: text; background-clip: text; }
+  .fill-coral { background: linear-gradient(180deg, var(--coral-hi), var(--coral) 60%, #d85c3c); -webkit-background-clip: text; background-clip: text; }
+  .fill-teal  { background: linear-gradient(180deg, #5f9da0, var(--teal) 55%, #2a5e62); -webkit-background-clip: text; background-clip: text; }
+  .fill-paper { background: linear-gradient(180deg, #ffffff, #f6efe0 70%, #ece2cf); -webkit-background-clip: text; background-clip: text; }
+  .fill-gold  { background: linear-gradient(180deg, var(--gold-hi), var(--gold) 55%, var(--gold-lo)); -webkit-background-clip: text; background-clip: text; }
+
+  /* 1 原配色 */
+  .s1 { background: radial-gradient(ellipse 70% 40% at 30% 15%, rgba(119,184,186,.5), transparent 70%), linear-gradient(180deg, #3c7c80, #306c6c 45%, #245a5e); color: var(--cream); }
+  /* 2 反轉 */
+  .s2 { background: radial-gradient(ellipse 70% 40% at 50% 0%, #fffaf2, transparent 70%), linear-gradient(180deg, #f6ecdd, #ece0cd); color: var(--teal); }
+  /* 3 單色奶油 */
+  .s3 { background: radial-gradient(circle at 50% 40%, #3c7c80, #184848 60%, #0c3030); color: var(--cream); }
+  /* 4 珊瑚霓光 */
+  .s4 { background: radial-gradient(circle at 50% 45%, #245a5e, #0c3030 75%); color: var(--coral); }
+  /* 5 奶油紙雕 */
+  .s5 { background: radial-gradient(circle at 50% 30%, #fbf7ee, #ece4d2); color: #fbf7ee; }
+  /* 6 薄荷黏土 */
+  .s6 { background: radial-gradient(circle at 10% 90%, #bfe6dc 0 24%, transparent 25%), linear-gradient(170deg, #e9f7f2, #d3eee5); color: var(--teal-lo); }
+  /* 7 金箔 */
+  .s7 { background: radial-gradient(circle at 50% 35%, #245a5e, #0c3030 80%); color: var(--gold); }
+  /* 8 霧面玻璃 */
+  .s8 { background: linear-gradient(160deg, #77b8ba, #306c6c 55%, #184848); color: #fff; }
+  /* 9 描邊線框 */
+  .s9 { background: var(--teal-deep); color: var(--cream); }
+  /* 10 雙色切割 */
+  .s10 { background: linear-gradient(180deg, var(--cream) 0 50%, var(--teal) 50% 100%); color: var(--teal-deep); }
+  /* 11 珊瑚色塊 */
+  .s11 { background: #f6ecdd; color: var(--teal-deep); }
+  /* 12 漸層霧 */
+  .s12 { background: linear-gradient(180deg, #306c6c, #184848); color: var(--cream); }
+  /* 13 光暈鑲邊 */
+  .s13 { background: radial-gradient(circle at 50% 50%, #3c7c80, #0c3030 75%); color: var(--cream-hi); }
+  /* 14 螢光筆 */
+  .s14 { background: linear-gradient(180deg, #f6ecdd, #ece0cd); color: var(--teal-deep); }
+
+  /* 9：描邊 */
+  .s9 .title { -webkit-text-stroke: 3px var(--cream); color: transparent; }
+  /* 11：色塊底 */
+  .hl { display: inline-block; padding: 0 22px; background: var(--coral); color: var(--cream-hi); -webkit-background-clip: border-box; background-clip: border-box; border-radius: 18px; }
+  /* 14：螢光筆 */
+  .mark { display: inline; background: linear-gradient(transparent 58%, rgba(232,185,100,.85) 58%, rgba(232,185,100,.85) 92%, transparent 92%); color: var(--teal-deep); -webkit-background-clip: border-box; background-clip: border-box; }
+  .s14 .title span { color: var(--teal-deep); -webkit-background-clip: border-box; background-clip: border-box; }
+  /* 4：珊瑚光 */
+  .s4 .title { filter: drop-shadow(0 0 3px rgba(240,168,132,.9)) drop-shadow(0 0 18px rgba(228,108,72,.55)); }
+  /* 8：玻璃 */
+  .s8 .title { color: rgba(255,255,255,.92); background: none; -webkit-background-clip: border-box; background-clip: border-box; text-shadow: 0 2px 0 rgba(255,255,255,.25); }
+
+  .s12 .title { -webkit-background-clip: border-box; background-clip: border-box; }
+  .s5 .foot, .s5 .tag { color: #7a6f5c; }
+  .s10 .foot, .s10 .tag { color: var(--cream); }
+  .solid .title { color: inherit; -webkit-background-clip: border-box; background-clip: border-box; }
+  .s9 .title { color: transparent; }
+</style>
+</head>
+<body>
+
+<section class="card s1" id="p1"><div class="tag">01 · 原配色</div>
+  <h1 class="title extrude" data-d="7" data-from="#e4d8cc" data-to="#2a5a5e"><span class="fill-cream">如何自動化</span><span class="fill-coral">內容創作</span></h1>
+  <div class="foot">AUTOMATE · CONTENT</div></section>
+
+<section class="card s2" id="p2"><div class="tag">02 · 反轉</div>
+  <h1 class="title extrude" data-d="7" data-from="#5f9da0" data-to="#143a3c"><span class="fill-teal">如何自動化</span><span class="fill-coral">內容創作</span></h1>
+  <div class="foot">AUTOMATE · CONTENT</div></section>
+
+<section class="card s3" id="p3"><div class="tag">03 · 單色奶油</div>
+  <h1 class="title extrude" data-d="7" data-from="#e4d8cc" data-to="#0c3030"><span class="fill-cream">如何自動化</span><span class="fill-cream">內容創作</span></h1>
+  <div class="foot">AUTOMATE · CONTENT</div></section>
+
+<section class="card s4 solid" id="p4"><div class="tag">04 · 珊瑚霓光</div>
+  <h1 class="title"><span>如何自動化</span><span>內容創作</span></h1>
+  <div class="foot">CORAL · GLOW</div></section>
+
+<section class="card s5" id="p5"><div class="tag">05 · 奶油紙雕</div>
+  <h1 class="title extrude" data-d="7" data-from="#d8cdb6" data-to="#a08c70"><span class="fill-paper">如何自動化</span><span class="fill-paper">內容創作</span></h1>
+  <div class="foot">PAPER · CUT</div></section>
+
+<section class="card s6" id="p6"><div class="tag">06 · 薄荷黏土</div>
+  <h1 class="title extrude" data-d="7" data-from="#a9d8ca" data-to="#5f9b8e"><span class="fill-teal">如何自動化</span><span class="fill-coral">內容創作</span></h1>
+  <div class="foot">SOFT · 3D</div></section>
+
+<section class="card s7" id="p7"><div class="tag">07 · 金箔</div>
+  <h1 class="title extrude" data-d="7" data-from="#9a6a22" data-to="#0c3030"><span class="fill-gold">如何自動化</span><span class="fill-gold">內容創作</span></h1>
+  <div class="foot">GOLD · LEAF</div></section>
+
+<section class="card s8 solid" id="p8"><div class="tag">08 · 霧面玻璃</div>
+  <h1 class="title"><span>如何自動化</span><span>內容創作</span></h1>
+  <div class="foot">FROSTED · GLASS</div></section>
+
+<section class="card s9 solid" id="p9"><div class="tag">09 · 描邊線框</div>
+  <h1 class="title"><span>如何自動化</span><span>內容創作</span></h1>
+  <div class="foot">OUTLINE · TYPE</div></section>
+
+<section class="card s10 solid" id="p10"><div class="tag">10 · 雙色切割</div>
+  <h1 class="title"><span style="color:var(--teal-deep)">如何自動化</span><span style="color:var(--coral)">內容創作</span></h1>
+  <div class="foot">SPLIT · TONE</div></section>
+
+<section class="card s11 solid" id="p11"><div class="tag">11 · 珊瑚色塊</div>
+  <h1 class="title"><span style="color:var(--teal-deep)">如何自動化</span><span><span class="hl">內容創作</span></span></h1>
+  <div class="foot">BLOCK · ACCENT</div></section>
+
+<section class="card s12" id="p12"><div class="tag">12 · 漸層霧</div>
+  <h1 class="title"><span style="color:var(--cream)">如何自動化</span><span class="fill-gradient-bot">內容創作</span></h1>
+  <div class="foot">MIST · GRADIENT</div></section>
+
+<section class="card s13 solid" id="p13"><div class="tag">13 · 光暈鑲邊</div>
+  <h1 class="title extrude" data-d="7" data-from="#8fc4c6" data-to="#0c3030"><span>如何自動化</span><span>內容創作</span></h1>
+  <div class="foot">HALO · EDGE</div></section>
+
+<section class="card s14 solid" id="p14"><div class="tag">14 · 螢光筆</div>
+  <h1 class="title"><span>如何自動化</span><span><span class="mark">內容創作</span></span></h1>
+  <div class="foot">HIGHLIGHT · MARK</div></section>
+
+<style>
+  .fill-gradient-top { background: linear-gradient(180deg, #5f9da0, #306c6c); -webkit-background-clip: text; background-clip: text; }
+  .fill-gradient-bot { background: linear-gradient(180deg, #ffb99c, #e46c48); -webkit-background-clip: text; background-clip: text; }
+  .s10 .title span { -webkit-background-clip: border-box; background-clip: border-box; }
+</style>
+
+<script>
+  function hex(n) { return n.toString(16).padStart(2, '0'); }
+  function lerp(a, b, t) {
+    const A = [0,2,4].map(i => parseInt(a.slice(1 + i, 3 + i), 16));
+    const B = [0,2,4].map(i => parseInt(b.slice(1 + i, 3 + i), 16));
+    return '#' + A.map((v, i) => hex(Math.round(v + (B[i] - v) * t))).join('');
+  }
+  // 單一平行光（太陽光）：擠出與投影同一方向，投影為硬邊、無暈影
+  const LIGHT = { x: 0.5, y: 0.866 };          // 光線往右下 60°
+  document.querySelectorAll('.extrude').forEach(el => {
+    const d = +el.dataset.d, from = el.dataset.from, to = el.dataset.to;
+    const step = 0.6;                          // 每層沿光線方向推進 0.6px
+    const L = ['drop-shadow(0 -1px 0 rgba(255,255,255,.5))'];   // 頂緣細光
+    for (let i = 1; i <= d; i++) {
+      const t = (i - 1) / Math.max(d - 1, 1);
+      const x = (i * step * LIGHT.x).toFixed(2), y = (i * step * LIGHT.y).toFixed(2);
+      L.push(`drop-shadow(${x}px ${y}px 0 ${lerp(from, to, t)})`);
+    }
+    // 投影：同方向、約 6px、硬邊、低透明度（只有光線能投出的影子）
+    const k = 6;
+    L.push(`drop-shadow(${(k * LIGHT.x).toFixed(2)}px ${(k * LIGHT.y).toFixed(2)}px 0 rgba(0,0,0,.28))`);
+    el.style.filter = L.join(' ');
+  });
+</script>
+</body>
+</html>
